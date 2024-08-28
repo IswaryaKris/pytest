@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>home_page.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+home_page.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">webdriver</span><span class="s2">.</span><span class="s1">common</span><span class="s2">.</span><span class="s1">by </span><span class="s0">import </span><span class="s1">By</span>
+
+<span class="s0">from </span><span class="s2">.</span><span class="s1">base_page </span><span class="s0">import </span><span class="s1">BasePage</span>
+
+<span class="s0">class </span><span class="s1">HomePage</span><span class="s2">(</span><span class="s1">BasePage</span><span class="s2">):</span>
+    <span class="s1">SEARCH_BOX </span><span class="s2">= (</span><span class="s1">By</span><span class="s2">.</span><span class="s1">ID</span><span class="s2">, </span><span class="s3">&quot;twotabsearchtextbox&quot;</span><span class="s2">)</span>
+    <span class="s1">SEARCH_BUTTON </span><span class="s2">= (</span><span class="s1">By</span><span class="s2">.</span><span class="s1">ID</span><span class="s2">, </span><span class="s3">&quot;nav-search-submit-button&quot;</span><span class="s2">)</span>
+
+    <span class="s0">def </span><span class="s1">search_for_product</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">product_name</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">input_text</span><span class="s2">(*</span><span class="s1">self</span><span class="s2">.</span><span class="s1">SEARCH_BOX</span><span class="s2">, </span><span class="s1">product_name</span><span class="s2">)</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">click_element</span><span class="s2">(*</span><span class="s1">self</span><span class="s2">.</span><span class="s1">SEARCH_BUTTON</span><span class="s2">)</span>
+</pre>
+</body>
+</html>

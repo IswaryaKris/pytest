@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>base_page.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+base_page.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">webdriver</span><span class="s2">.</span><span class="s1">support </span><span class="s0">import </span><span class="s1">expected_conditions </span><span class="s0">as </span><span class="s1">EC</span>
+<span class="s0">from </span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">webdriver</span><span class="s2">.</span><span class="s1">support</span><span class="s2">.</span><span class="s1">ui </span><span class="s0">import </span><span class="s1">WebDriverWait</span>
+<span class="s0">from </span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">webdriver</span><span class="s2">.</span><span class="s1">common</span><span class="s2">.</span><span class="s1">by </span><span class="s0">import </span><span class="s1">By</span>
+
+
+<span class="s0">class </span><span class="s1">BasePage</span><span class="s2">:</span>
+    <span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">driver</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">driver </span><span class="s2">= </span><span class="s1">driver</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">wait </span><span class="s2">= </span><span class="s1">WebDriverWait</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s3">30</span><span class="s2">)</span>
+
+    <span class="s0">def </span><span class="s1">find_element</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">by</span><span class="s2">, </span><span class="s1">value</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">wait</span><span class="s2">.</span><span class="s1">until</span><span class="s2">(</span><span class="s1">EC</span><span class="s2">.</span><span class="s1">presence_of_element_located</span><span class="s2">((</span><span class="s1">by</span><span class="s2">, </span><span class="s1">value</span><span class="s2">)))</span>
+
+    <span class="s0">def </span><span class="s1">click_element</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">by</span><span class="s2">, </span><span class="s1">value</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">find_element</span><span class="s2">(</span><span class="s1">by</span><span class="s2">, </span><span class="s1">value</span><span class="s2">).</span><span class="s1">click</span><span class="s2">()</span>
+
+    <span class="s0">def </span><span class="s1">input_text</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">by</span><span class="s2">, </span><span class="s1">value</span><span class="s2">, </span><span class="s1">text</span><span class="s2">):</span>
+        <span class="s1">element </span><span class="s2">= </span><span class="s1">self</span><span class="s2">.</span><span class="s1">find_element</span><span class="s2">(</span><span class="s1">by</span><span class="s2">, </span><span class="s1">value</span><span class="s2">)</span>
+        <span class="s1">element</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">()</span>
+        <span class="s1">element</span><span class="s2">.</span><span class="s1">send_keys</span><span class="s2">(</span><span class="s1">text</span><span class="s2">)</span>
+</pre>
+</body>
+</html>

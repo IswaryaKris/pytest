@@ -1,0 +1,14 @@
+# Selenium for browser automation
+selenium==4.23.1
+
+# PyTest for running and organizing tests
+pytest==8.3.2
+
+# Pytest-html for generating HTML test reports
+pytest-html==3.2.0
+
+# PyYAML for reading configuration files in YAML format
+pyyaml==6.0
+
+# Logging configuration and color support
+colorlog==6.7.0
